@@ -22,6 +22,25 @@ where the design is being worked out and built in stages.
 - Design starting point: [docs/decisions/DR-0001-knowledge-index-sidecar-architecture.md](./docs/decisions/DR-0001-knowledge-index-sidecar-architecture.md)
 - Phased rollout plan: [docs/ROADMAP.md](./docs/ROADMAP.md)
 
+## Install
+
+```bash
+# As a Claude Code plugin
+claude plugin marketplace add kawaz/claude-nandakke
+claude plugin install nandakke@nandakke
+```
+
+The current build is a skeleton only — no runtime features yet. Install if
+you want to follow the design process or pre-install ahead of the upcoming
+Phase 1 prototype.
+
+## Update
+
+```bash
+claude plugin marketplace update nandakke
+claude plugin update nandakke@nandakke
+```
+
 ## Documents
 
 - [DESIGN.md](./docs/DESIGN.md) — Domain + architecture

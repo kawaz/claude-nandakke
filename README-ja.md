@@ -16,6 +16,24 @@ AI に「ぼんやりした正確な全体インデックス」を持たせる C
 - 設計の出発点: [docs/decisions/DR-0001-knowledge-index-sidecar-architecture.md](./docs/decisions/DR-0001-knowledge-index-sidecar-architecture.md)
 - 段階導入計画: [docs/ROADMAP.md](./docs/ROADMAP.md)
 
+## インストール
+
+```bash
+# Claude Code プラグインとして
+claude plugin marketplace add kawaz/claude-nandakke
+claude plugin install nandakke@nandakke
+```
+
+現状はプラグインの skeleton のみで実機能は未実装。設計検討の進行を追う目的か、
+将来の Phase 1 試作に追随するための先行インストール用途を想定。
+
+## 更新
+
+```bash
+claude plugin marketplace update nandakke
+claude plugin update nandakke@nandakke
+```
+
 ## ドキュメント
 
 - [DESIGN-ja.md](./docs/DESIGN-ja.md) — ドメイン + アーキテクチャ
