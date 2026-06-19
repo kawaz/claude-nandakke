@@ -7,7 +7,8 @@
 
 ## ⚠️ 重要な前提条件 (= 結論の有効範囲)
 
-本実験の結論 (特に T 型に関する評価) は、`~/.claude/settings.json` に
+本実験の結論 (特に T 型に関する評価) は、`${CLAUDE_CONFIG_DIR:-~/.claude}/settings.json`
+(kawaz 環境では複数面で値が異なる、`claude-config-dir-isolation` 参照) に
 **`"showThinkingSummaries": true`** が設定された環境のみで valid。
 
 - デフォルトでは `showThinkingSummaries: false` のため、jsonl の `thinking` ブロックは
