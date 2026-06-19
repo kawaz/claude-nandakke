@@ -21,8 +21,10 @@ origin: 自リポ TODO (2026-06-19 設計セッション中の重要発見)
 
 ## 概要
 
-nandakke が読む CSA jsonl の `thinking` ブロックは、`~/.claude/settings.json` の
-`"showThinkingSummaries": true` が無効だと **記録されるが内容が空文字列** になる。
+nandakke が読む CSA jsonl の `thinking` ブロックは、
+`${CLAUDE_CONFIG_DIR:-~/.claude}/settings.json` (kawaz 環境では複数面で値が異なる、
+`claude-config-dir-isolation` 参照) の `"showThinkingSummaries": true` が無効だと
+**記録されるが内容が空文字列** になる。
 この設定が無効の環境では nandakke の Phase 1 評価実験の前提が崩れ、T 型に依存した
 索引化が機能不全になる。
 
@@ -40,8 +42,10 @@ nandakke が読む CSA jsonl の `thinking` ブロックは、`~/.claude/setting
 
 - [ ] README に Requirements として `showThinkingSummaries: true` の必須を明記
   (英訳ペア README-ja.md / README.md 両方)
-- [ ] SessionStart hook (= プラグイン側のチェック機構) で `~/.claude/settings.json` を
-      読み、`showThinkingSummaries` が `true` でない場合に nudge (= 一行警告 + 設定方法案内)
+- [ ] SessionStart hook (= プラグイン側のチェック機構) で
+      `${CLAUDE_CONFIG_DIR:-~/.claude}/settings.json` を読み、`showThinkingSummaries`
+      が `true` でない場合に nudge (= 一行警告 + 設定方法案内)。
+      実装は環境変数 `$CLAUDE_CONFIG_DIR` を優先参照 (= ハードコード `~/.claude` 不可)
 - [ ] DESIGN.md の前提条件セクションに記載
 - [ ] 既存の `docs/journal/2026-06-18-phase1-trial-v3-matrix/SUMMARY-v3.md` の
       前提条件 caveat と相互参照 (= 既に追記済み)
@@ -56,4 +60,4 @@ nandakke が読む CSA jsonl の `thinking` ブロックは、`~/.claude/setting
 
 - v3 SUMMARY 注記: `docs/journal/2026-06-18-phase1-trial-v3-matrix/SUMMARY-v3.md`
 - CSA 関連セッション: `e136fb81-4601-46be-a50e-c318a648be51` (`claude-session-analysis timeline e136fb81` で詳細)
-- 設定ファイル参照: `~/.claude/settings.json` の `showThinkingSummaries` フィールド
+- 設定ファイル参照: `${CLAUDE_CONFIG_DIR:-~/.claude}/settings.json` の `showThinkingSummaries` フィールド
