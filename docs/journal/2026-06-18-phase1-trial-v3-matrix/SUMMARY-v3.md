@@ -5,6 +5,24 @@
 
 ---
 
+## ⚠️ 重要な前提条件 (= 結論の有効範囲)
+
+本実験の結論 (特に T 型に関する評価) は、`~/.claude/settings.json` に
+**`"showThinkingSummaries": true`** が設定された環境のみで valid。
+
+- デフォルトでは `showThinkingSummaries: false` のため、jsonl の `thinking` ブロックは
+  **記録されるが内容が空文字列** になる (= T 型は空っぽ)
+- この場合、本実験の「T 型が R 型より情報密度高い」「F 条件 (`-t TR`) が最多」等の結論は
+  **構造的に成立しない**
+- 経緯: kawaz が 2026-03-21 に CSA 開発中に「timeline の T が出ない」と気付き、
+  `showThinkingSummaries: true` 追加で解決 (詳細: CSA セッション `e136fb81`)
+
+**この前提が崩れる環境では nandakke の Phase 1 評価実験全体を再検討する必要がある**。
+nandakke の requirements として、または SessionStart hook でのチェック機構が必須
+(issue: `docs/issue/2026-06-19-check-show-thinking-summaries.md` で追跡)。
+
+---
+
 ## 1. 件数マトリクス
 
 索引テーブルのデータ行数（ヘッダ・区切り行除く）。
