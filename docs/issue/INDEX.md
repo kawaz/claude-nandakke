@@ -8,3 +8,4 @@
 | 2026-06-19 | task | open | [compare-index-vs-raw-jsonl](./2026-06-19-compare-index-vs-raw-jsonl.md) | 質問 20 問への正答率を「索引あり (SQLite) vs 索引なし (jsonl 直渡し)」で比較する (= Phase 1 第一段検証) |
 | 2026-06-19 | request | open | [check-show-thinking-summaries](./2026-06-19-check-show-thinking-summaries.md) | nandakke 利用時に `showThinkingSummaries: true` の有効化をチェック/促す機構 |
 | 2026-06-20 | task | pending-sublimation | [track-claude-plugin-reference-issue-ecef023-push-decision](./2026-06-20-track-claude-plugin-reference-issue-ecef023-push-decision.md) | claude-plugin-reference への improvement issue (ecef023) を push/撤回/書き換えするかの判断追跡 |
+| 2026-07-29 | task | open | [repo-retirement-candidate-nandakke](./2026-07-29-repo-retirement-candidate-nandakke.md) | NK-Q1 裁定により次回 repo-retirement 判定へ登載 |
