@@ -16,7 +16,7 @@ push: ensure-clean validate test check-versions check-outdated-translations
 [script]
 bump-version bump="patch": ensure-clean
     new_version=$(bump-semver "$1" .claude-plugin/plugin.json .claude-plugin/marketplace.json --write --no-hint)
-    bump-semver vcs commit -m "Release v${new_version}" .claude-plugin/plugin.json .claude-plugin/marketplace.json
+    bump-semver vcs commit --allow-nonexistent-path -m "Release v${new_version}" .claude-plugin/plugin.json .claude-plugin/marketplace.json
 
 # 現在の version を確認
 version:
